@@ -445,7 +445,7 @@ int GME_NetwHttpGET(const char* url_str, const GME_NetwGETOnErr on_err, const GM
 	send(sock, http_req, strlen(http_req), 0);
 
 	/* stuff to receive data */
-	char recv_buff[4096];
+	char recv_buff[131072];
 	int recv_size;
 
 	/* receiving HTTP response (or not) */
@@ -696,7 +696,7 @@ int GME_NetwHttpGET(const char* url_str, const GME_NetwGETOnErr on_err, const GM
 	send(sock, http_req, strlen(http_req), 0);
 
 	/* stuff to receive data */
-	char recv_buff[4096];
+	char recv_buff[131072];
 	int recv_size;
 
 	/* receiving HTTP response (or not) */
