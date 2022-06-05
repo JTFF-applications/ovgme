@@ -98,9 +98,9 @@ BOOL CALLBACK GME_DlgRepConf(HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM lPar
 		switch (LOWORD(wParam))
 		{
 		case BTN_REPOADD:
-			GetDlgItemText(hwndDlg, ENT_REPOURL, GME_PCharToLPWSTR(tmp_srurl), 256);
+			GetDlgItemText(hwndDlg, ENT_REPOURL, tmp_srurl, 256);
 			GME_RepoAddUrl(tmp_srurl);
-			SetDlgItemText(hwndDlg, ENT_REPOURL, L"");
+			SetDlgItemText(hwndDlg, ENT_REPOURL, "");
 			return true;
 
 		case BTN_REPOREM:
@@ -114,7 +114,7 @@ BOOL CALLBACK GME_DlgRepConf(HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM lPar
 
 		case ENT_REPOURL:
 			// tbool or disable add button
-			GetDlgItemText(hwndDlg, ENT_REPOURL, GME_PCharToLPWSTR(tmp_srurl), 256);
+			GetDlgItemText(hwndDlg, ENT_REPOURL, tmp_srurl, 256);
 			if (strlen(tmp_srurl) > 4) {
 				EnableWindow(GetDlgItem(hwndDlg, BTN_REPOADD), true);
 			}
@@ -368,7 +368,7 @@ BOOL CALLBACK GME_DlgRepXml(HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM lPara
 			return true;
 
 		case BTN_MAKEXMLSRC:
-			GetDlgItemText(hwndDlg, ENT_MAKEXMLURL, GME_PCharToLPWSTR(tmp_srurl), 256);
+			GetDlgItemText(hwndDlg, ENT_MAKEXMLURL, tmp_srurl, 256);
 			if (SendMessage(GetDlgItem(hwndDlg, CHK_CUSTXMLPATH), BM_GETCHECK, 0, 0)) {
 				GetDlgItemTextW(hwndDlg, ENT_MAKEXMLPATH, tmp_spath, 260);
 				GME_RepoMakeXml(tmp_srurl, true, tmp_spath);
@@ -395,7 +395,7 @@ BOOL CALLBACK GME_DlgRepXml(HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM lPara
 		case ENT_MAKEXMLURL:
 			// tbool or disable add button
 			if (SendMessage(GetDlgItem(hwndDlg, CHK_CUSTXMLPATH), BM_GETCHECK, 0, 0)) {
-				GetDlgItemText(hwndDlg, ENT_MAKEXMLURL, GME_PCharToLPWSTR(tmp_srurl), 256);
+				GetDlgItemText(hwndDlg, ENT_MAKEXMLURL, tmp_srurl, 256);
 				if (strlen(tmp_srurl) > 3) {
 					GetDlgItemTextW(hwndDlg, ENT_MAKEXMLPATH, tmp_spath, 260);
 					if (wcslen(tmp_spath) > 2) {
@@ -410,7 +410,7 @@ BOOL CALLBACK GME_DlgRepXml(HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM lPara
 				}
 			}
 			else {
-				GetDlgItemText(hwndDlg, ENT_MAKEXMLURL, GME_PCharToLPWSTR(tmp_srurl), 256);
+				GetDlgItemText(hwndDlg, ENT_MAKEXMLURL, tmp_srurl, 256);
 				if (strlen(tmp_srurl) > 3) {
 					EnableWindow(GetDlgItem(hwndDlg, BTN_MAKEXMLSRC), true);
 				}

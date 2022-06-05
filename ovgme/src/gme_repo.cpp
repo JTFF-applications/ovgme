@@ -257,7 +257,7 @@ bool GME_RepoChkList()
 	memset(&item, 0, sizeof(TVITEM));
 	item.mask = TVIF_TEXT;
 	item.cchTextMax = 256;
-	item.pszText = GME_PCharToLPWSTR(buff);
+	item.pszText = buff;
 
 	item.hItem = (HTREEITEM)SendMessage(htv, TVM_GETNEXTITEM, (WPARAM)TVGN_ROOT, (LPARAM)NULL);
 
@@ -266,7 +266,7 @@ bool GME_RepoChkList()
 	int imgstate;
 
 	for (unsigned i = 0; i < g_GME_Repos_List.size(); i++) {
-		if (!strcmp(g_GME_Repos_List[i].url, GME_LPCWSTRToPChar(item.pszText))) {
+		if (!strcmp(g_GME_Repos_List[i].url, item.pszText)) {
 			imgstate = SendMessage(htv, TVM_GETITEMSTATE, (WPARAM)item.hItem, TVIS_STATEIMAGEMASK);
 			g_GME_Repos_List[i].enabled = (0x2000 & imgstate); /* 0x2000 is the bit for check-box checked image */
 			break;
@@ -276,7 +276,7 @@ bool GME_RepoChkList()
 	while (item.hItem = TreeView_GetNextItem(htv, item.hItem, TVGN_NEXT)) {
 		SendMessage(htv, TVM_GETITEM, 0, (LPARAM)&item);
 		for (unsigned i = 0; i < g_GME_Repos_List.size(); i++) {
-			if (!strcmp(g_GME_Repos_List[i].url, GME_LPCWSTRToPChar(item.pszText))) {
+			if (!strcmp(g_GME_Repos_List[i].url, item.pszText)) {
 				imgstate = SendMessage(htv, TVM_GETITEMSTATE, (WPARAM)item.hItem, TVIS_STATEIMAGEMASK);
 				g_GME_Repos_List[i].enabled = (0x2000 & imgstate); /* 0x2000 is the bit for check-box checked image */
 				break;
@@ -315,7 +315,7 @@ bool GME_RepoUpdList()
 	tvins.item.stateMask = TVIS_STATEIMAGEMASK;
 
 	for (unsigned i = 0; i < g_GME_Repos_List.size(); i++) {
-		tvins.item.pszText = GME_PCharToLPWSTR(g_GME_Repos_List[i].url);
+		tvins.item.pszText = g_GME_Repos_List[i].url;
 		if (g_GME_Repos_List[i].enabled) {
 			tvins.item.state = INDEXTOSTATEIMAGEMASK(2); // check-box checked image
 		}
@@ -374,12 +374,12 @@ bool GME_RepoRemUrl()
 	item.mask = TVIF_TEXT | TVIF_STATE;
 	item.hItem = hitem;
 	item.cchTextMax = 256;
-	item.pszText = GME_PCharToLPWSTR(buff);
+	item.pszText = buff;
 	item.stateMask = 0xffffffff;
 
 	//TreeView_GetItem(htv, &item);
 	SendMessage(htv, TVM_GETITEM, 0, (LPARAM)&item);
-	rem_list.push_back(GME_LPCWSTRToPChar(item.pszText));
+	rem_list.push_back(item.pszText);
 
 	for (unsigned i = 0; i < rem_list.size(); i++) {
 		unsigned c = g_GME_Repos_List.size();
@@ -527,11 +527,11 @@ bool GME_RepoChkDesc()
 		if (SendMessageW(hlv, LVM_GETITEMSTATE, i, LVIS_SELECTED)) {
 
 			if (!sel_cnt) {
-				SendMessageW(het, WM_SETTEXT, 0, (LPARAM)GME_PCharToLPWSTR(g_GME_ReposMod_List[i].desc.c_str()));
+				SendMessageW(het, WM_SETTEXT, 0, (LPARAM)GME_StrToWcs(g_GME_ReposMod_List[i].desc.c_str()).c_str());
 				sel_cnt++;
 			}
 			else {
-				SendMessageW(het, WM_SETTEXT, 0, (LPARAM)L"[Multiple selection]");
+				SendMessageW(het, WM_SETTEXT, 0, (LPARAM)"[Multiple selection]");
 				return false;
 			}
 		}
@@ -696,7 +696,7 @@ void GME_RepoDnl_OnErr(const char* url)
 {
 	HWND hpb = GetDlgItem(g_hwndRepUpd, PBM_DONWLOAD);
 	SendMessage(hpb, PBM_SETPOS, (WPARAM)0, 0);
-	SetDlgItemText(g_hwndRepUpd, TXT_DOWNSPEED, L"---- Kio/s");
+	SetDlgItemText(g_hwndRepUpd, TXT_DOWNSPEED, "---- Kio/s");
 	GME_RepoDnl_SetItemProgress(g_GME_ReposDnl_List[g_ReposQry_Id].name, -1);
 }
 
@@ -707,7 +707,7 @@ bool GME_RepoDnl_OnDnl(unsigned percent, unsigned rate)
 	/* update item in list view */
 	char buff[64];
 	sprintf(buff, "%d Kio/s", (rate / 1024));
-	SetDlgItemText(g_hwndRepUpd, TXT_DOWNSPEED, GME_PCharToLPWSTR(buff));
+	SetDlgItemText(g_hwndRepUpd, TXT_DOWNSPEED, buff);
 	GME_RepoDnl_SetItemProgress(g_GME_ReposDnl_List[g_ReposQry_Id].name, percent);
 	return (g_ReposQry_Cancel == false);
 }
@@ -716,7 +716,7 @@ void GME_RepoDnl_OnSav(const wchar_t* path)
 {
 	HWND hpb = GetDlgItem(g_hwndRepUpd, PBM_DONWLOAD);
 	SendMessage(hpb, PBM_SETPOS, (WPARAM)100, 0);
-	SetDlgItemText(g_hwndRepUpd, TXT_DOWNSPEED, L"---- Kio/s");
+	SetDlgItemText(g_hwndRepUpd, TXT_DOWNSPEED, "---- Kio/s");
 	/* delete old file */
 	std::wstring mod_path = GME_GameGetCurModsPath() + L"\\";
 	mod_path += g_GME_ReposDnl_List[g_ReposQry_Id].name;
@@ -814,7 +814,7 @@ DWORD WINAPI GME_RepoQueryDnl_Th(void* args)
 
 		if (g_ReposQry_Cancel) {
 			SendMessage(hpb, PBM_SETPOS, (WPARAM)0, 0);
-			SetDlgItemText(g_hwndRepUpd, TXT_DOWNSPEED, L"---- Kio/s");
+			SetDlgItemText(g_hwndRepUpd, TXT_DOWNSPEED, "---- Kio/s");
 
 			for (unsigned i = 0; i < g_GME_ReposDnl_List.size(); i++) {
 				GME_RepoDnl_SetItemStatus(g_GME_ReposDnl_List[i].name, L"");
@@ -834,7 +834,7 @@ DWORD WINAPI GME_RepoQueryDnl_Th(void* args)
 	}
 
 	SendMessage(hpb, PBM_SETPOS, (WPARAM)0, 0);
-	SetDlgItemText(g_hwndRepUpd, TXT_DOWNSPEED, L"---- Kio/s");
+	SetDlgItemText(g_hwndRepUpd, TXT_DOWNSPEED, "---- Kio/s");
 
 	g_GME_ReposDnl_List.clear();
 
@@ -935,7 +935,7 @@ DWORD WINAPI GME_RepoQueryUpd_Th(void* args)
 		SendMessage(hpb, PBM_SETRANGE, 0, MAKELPARAM(0, 100));
 		unsigned l = std::string(g_GME_Repos_List[i].url).find_first_of("/", 0);
 		cnx_msg = "Try connecting to "; cnx_msg += std::string(g_GME_Repos_List[i].url).substr(0, l); cnx_msg += " please wait...";
-		SetDlgItemText(g_hwndRepUpd, TXT_REPOQRYURL, GME_PCharToLPWSTR(cnx_msg.c_str()));
+		SetDlgItemText(g_hwndRepUpd, TXT_REPOQRYURL, cnx_msg.c_str());
 
 		GME_Logs(GME_LOG_NOTICE, "GME_RepoQueryUpd_Th", "Try HTTP access", xml_url.c_str());
 
@@ -1269,7 +1269,7 @@ std::string GME_RepoMakeXml(const char* url_str, bool cust_path, const wchar_t* 
 	}
 	xml_ascii += "</mod_list>\r\n";
 
-	SetDlgItemText(g_hwndRepXml, ENT_OUTPUT, GME_PCharToLPWSTR(xml_ascii.c_str()));
+	SetDlgItemText(g_hwndRepXml, ENT_OUTPUT, xml_ascii.c_str());
 
 	return xml_ascii;
 }
@@ -1319,7 +1319,7 @@ bool GME_RepoSaveXml()
 			return false;
 		}
 
-		GetDlgItemText(g_hwndRepXml, ENT_OUTPUT, GME_PCharToLPWSTR(xml_src), xml_src_size + 1);
+		GetDlgItemText(g_hwndRepXml, ENT_OUTPUT, xml_src, xml_src_size + 1);
 
 		if (fwrite(xml_src, 1, xml_src_size, fp) != xml_src_size) {
 			fclose(fp);
@@ -1351,12 +1351,12 @@ bool GME_RepoTestXml(const wchar_t* path, unsigned offst)
 		std::vector<GME_ReposMod_Struct> reposmod_list;
 
 		if (!GME_RepoParseXml(content, &reposmod_list, &log)) {
-			SetDlgItemText(g_hwndRepXts, TXT_MESSAGE, L"XML repository file parsing error occurred, the repository XML source file is not valid.");
-			SetDlgItemText(g_hwndRepXts, ENT_OUTPUT, GME_PCharToLPWSTR(log.c_str()));
+			SetDlgItemText(g_hwndRepXts, TXT_MESSAGE, "XML repository file parsing error occurred, the repository XML source file is not valid.");
+			SetDlgItemText(g_hwndRepXts, ENT_OUTPUT, log.c_str());
 			return false;
 		}
 
-		SetDlgItemText(g_hwndRepXts, TXT_MESSAGE, L"XML repository file parsing succeed, the repository XML source file appear valid.");
+		SetDlgItemText(g_hwndRepXts, TXT_MESSAGE, "XML repository file parsing succeed, the repository XML source file appear valid.");
 
 		for (unsigned i = 0; i < reposmod_list.size(); i++) {
 			output += "==================================================================================================\r\nMod: \"";
@@ -1370,7 +1370,7 @@ bool GME_RepoTestXml(const wchar_t* path, unsigned offst)
 			output += "\r\n\r\n";
 		}
 
-		SetDlgItemText(g_hwndRepXts, ENT_OUTPUT, GME_PCharToLPWSTR(output.c_str()));
+		SetDlgItemText(g_hwndRepXts, ENT_OUTPUT, output.c_str());
 
 	}
 	else {

@@ -1597,17 +1597,17 @@ DWORD WINAPI GME_ModsMake_Th(void* args)
 	}
 
 	EnableWindow(GetDlgItem(g_hwndNewAMod, ENT_SRC), true);
-	SetDlgItemText(g_hwndNewAMod, ENT_SRC, L"");
+	SetDlgItemText(g_hwndNewAMod, ENT_SRC, "");
 	EnableWindow(GetDlgItem(g_hwndNewAMod, BTN_BROWSESRC), true);
 	EnableWindow(GetDlgItem(g_hwndNewAMod, ENT_DST), true);
 	EnableWindow(GetDlgItem(g_hwndNewAMod, BTN_BROWSEDST), true);
-	SetDlgItemText(g_hwndNewAMod, ENT_VERSMAJOR, L"0");
+	SetDlgItemText(g_hwndNewAMod, ENT_VERSMAJOR, "0");
 	EnableWindow(GetDlgItem(g_hwndNewAMod, ENT_VERSMAJOR), true);
-	SetDlgItemText(g_hwndNewAMod, ENT_VERSMINOR, L"0");
+	SetDlgItemText(g_hwndNewAMod, ENT_VERSMINOR, "0");
 	EnableWindow(GetDlgItem(g_hwndNewAMod, ENT_VERSMINOR), true);
-	SetDlgItemText(g_hwndNewAMod, ENT_VERSREVIS, L"0");
+	SetDlgItemText(g_hwndNewAMod, ENT_VERSREVIS, "0");
 	EnableWindow(GetDlgItem(g_hwndNewAMod, ENT_VERSREVIS), true);
-	SetDlgItemText(g_hwndNewAMod, ENT_MODDESC, L"");
+	SetDlgItemText(g_hwndNewAMod, ENT_MODDESC, "");
 	EnableWindow(GetDlgItem(g_hwndNewAMod, ENT_MODDESC), true);
 	// disable Add button
 	ShowWindow(GetDlgItem(g_hwndNewAMod, BTN_CREATE), true);

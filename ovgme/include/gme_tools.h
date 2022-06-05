@@ -76,8 +76,4 @@ std::wstring GME_Md5(const std::wstring& str);
 unsigned GME_crc32(unsigned crc, const ubyte* buf, size_t size);
 unsigned GME_FileGetXxH32(const std::wstring& src);
 
-LPCWSTR GME_PCharToLPCWSTR(const char* data);
-LPWSTR GME_PCharToLPWSTR(const char* data);
-char* GME_LPCWSTRToPChar(LPCWSTR data);
-
 #endif // GME_TOOLS_H_INCLUDED

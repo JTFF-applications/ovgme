@@ -130,18 +130,18 @@ BOOL CALLBACK GME_DlgModsMake(HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM lPa
 		g_hwndNewAMod = hwndDlg;
 		GME_DlgModsMakeInit();
 		EnableWindow(GetDlgItem(g_hwndNewAMod, ENT_SRC), true);
-		SetDlgItemText(hwndDlg, ENT_SRC, L"");
+		SetDlgItemText(hwndDlg, ENT_SRC, "");
 		EnableWindow(GetDlgItem(g_hwndNewAMod, BTN_BROWSESRC), true);
 		SetDlgItemTextW(hwndDlg, ENT_DST, GME_GameGetCurModsPath().c_str());
 		EnableWindow(GetDlgItem(g_hwndNewAMod, ENT_DST), true);
 		EnableWindow(GetDlgItem(g_hwndNewAMod, BTN_BROWSEDST), true);
-		SetDlgItemText(hwndDlg, ENT_VERSMAJOR, L"0");
+		SetDlgItemText(hwndDlg, ENT_VERSMAJOR, "0");
 		EnableWindow(GetDlgItem(g_hwndNewAMod, ENT_VERSMAJOR), true);
-		SetDlgItemText(hwndDlg, ENT_VERSMINOR, L"0");
+		SetDlgItemText(hwndDlg, ENT_VERSMINOR, "0");
 		EnableWindow(GetDlgItem(g_hwndNewAMod, ENT_VERSMINOR), true);
-		SetDlgItemText(hwndDlg, ENT_VERSREVIS, L"0");
+		SetDlgItemText(hwndDlg, ENT_VERSREVIS, "0");
 		EnableWindow(GetDlgItem(g_hwndNewAMod, ENT_VERSREVIS), true);
-		SetDlgItemText(hwndDlg, ENT_MODDESC, L"");
+		SetDlgItemText(hwndDlg, ENT_MODDESC, "");
 		EnableWindow(GetDlgItem(g_hwndNewAMod, ENT_MODDESC), true);
 		ShowWindow(GetDlgItem(g_hwndNewAMod, IDCANCEL), false);
 		// disable Add button
@@ -288,13 +288,13 @@ BOOL CALLBACK GME_DlgModsQuickMake(HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARA
 		GME_DlgModsMakeInit();
 		GME_DglModsQuickMakeInit();
 		GME_DlgModsQuickMakeResize();
-		SetDlgItemText(hwndDlg, ENT_VERSMAJOR, L"0");
+		SetDlgItemText(hwndDlg, ENT_VERSMAJOR, "0");
 		EnableWindow(GetDlgItem(g_hwndNewAMod, ENT_VERSMAJOR), true);
-		SetDlgItemText(hwndDlg, ENT_VERSMINOR, L"0");
+		SetDlgItemText(hwndDlg, ENT_VERSMINOR, "0");
 		EnableWindow(GetDlgItem(g_hwndNewAMod, ENT_VERSMINOR), true);
-		SetDlgItemText(hwndDlg, ENT_VERSREVIS, L"0");
+		SetDlgItemText(hwndDlg, ENT_VERSREVIS, "0");
 		EnableWindow(GetDlgItem(g_hwndNewAMod, ENT_VERSREVIS), true);
-		SetDlgItemText(hwndDlg, ENT_MODDESC, L"");
+		SetDlgItemText(hwndDlg, ENT_MODDESC, "");
 		EnableWindow(GetDlgItem(g_hwndNewAMod, ENT_MODDESC), true);
 		EnableWindow(GetDlgItem(g_hwndNewAMod, IDCANCEL), false);
 		// disable Add button

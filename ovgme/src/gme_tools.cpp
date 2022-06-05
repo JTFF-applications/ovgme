@@ -1194,29 +1194,3 @@ unsigned GME_FileGetXxH32(const std::wstring& src)
 
 	return xxh;
 }
-
-LPCWSTR GME_PCharToLPCWSTR(const char* data)
-{
-	size_t wn = mbsrtowcs(NULL, &data, 0, NULL);
-	wchar_t* buf = new wchar_t[wn + 1]();
-
-	wn = mbsrtowcs(buf, &data, wn + 1, NULL);
-	return buf;
-}
-
-LPWSTR GME_PCharToLPWSTR(const char* data)
-{
-	size_t wn = mbsrtowcs(NULL, &data, 0, NULL);
-	wchar_t* buf = new wchar_t[wn + 1]();
-
-	wn = mbsrtowcs(buf, &data, wn + 1, NULL);
-	return buf;
-}
-
-char* GME_LPCWSTRToPChar(LPCWSTR data)
-{
-	int length = WideCharToMultiByte(NULL, 0, data, -1, 0, 0, NULL, NULL);
-	char* output = new char[length];
-	WideCharToMultiByte(NULL, 0, data, -1, output, length, NULL, NULL);
-	return output;
-}

@@ -140,16 +140,16 @@ void GME_MainPopMenuMods()
 
   HMENU hMenuPopup = CreatePopupMenu();
   if(single) {
-    AppendMenu(hMenuPopup, MF_STRING, POP_TOGGLE, L"Toggle");
-    AppendMenu(hMenuPopup, MFT_SEPARATOR, MFT_SEPARATOR, L"---");
-    AppendMenu(hMenuPopup, MF_STRING, POP_OPENDIR, L"Explore...");
-    AppendMenu(hMenuPopup, MF_STRING, POP_MODDELETE, L"Delete...");
-    AppendMenu(hMenuPopup, MFT_SEPARATOR, MFT_SEPARATOR, L"---");
-    AppendMenu(hMenuPopup, MF_STRING, POP_MODCREATE, L"Make Mod-Archive...");
+    AppendMenu(hMenuPopup, MF_STRING, POP_TOGGLE, "Toggle");
+    AppendMenu(hMenuPopup, MFT_SEPARATOR, MFT_SEPARATOR, "---");
+    AppendMenu(hMenuPopup, MF_STRING, POP_OPENDIR, "Explore...");
+    AppendMenu(hMenuPopup, MF_STRING, POP_MODDELETE, "Delete...");
+    AppendMenu(hMenuPopup, MFT_SEPARATOR, MFT_SEPARATOR, "---");
+    AppendMenu(hMenuPopup, MF_STRING, POP_MODCREATE, "Make Mod-Archive...");
   } else {
-    AppendMenu(hMenuPopup, MF_STRING, POP_TOGGLE, L"Toggle selected");
-    AppendMenu(hMenuPopup, MF_STRING, POP_ENABLE, L"Enable selected");
-    AppendMenu(hMenuPopup, MF_STRING, POP_DISABLE, L"Disable selected");
+    AppendMenu(hMenuPopup, MF_STRING, POP_TOGGLE, "Toggle selected");
+    AppendMenu(hMenuPopup, MF_STRING, POP_ENABLE, "Enable selected");
+    AppendMenu(hMenuPopup, MF_STRING, POP_DISABLE, "Disable selected");
   }
 
   switch(type)
