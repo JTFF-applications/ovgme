@@ -144,7 +144,7 @@ FONT 8, "Ms Shell Dlg"
     CTEXT           "Version:", TXT_VERSION, 7, 44, 249, 9, SS_CENTER, WS_EX_LEFT
     CONTROL         IDB_LOGO, 0, WC_STATIC, SS_BITMAP, 83, 7, 95, 35, WS_EX_LEFT
     DEFPUSHBUTTON   "Close", IDOK, 107, 203, 50, 14, 0, WS_EX_LEFT
-    CTEXT           "Copyright (c) 2022 Fabian INGREMEAU", 0, 7, 55, 249, 9, SS_CENTER, WS_EX_LEFT
+    CTEXT           "Copyright (c) 2022 The OvGME Afterburner Comtributors", 0, 7, 55, 249, 9, SS_CENTER, WS_EX_LEFT
 }
 
 
