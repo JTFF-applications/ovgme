@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <title>Comparaison de snapshot</title>
+
+    <meta name="keywords" content="game,snapshot,compare,output" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  </head>
+
+  <body style="font-family: arial; font-size: 10pt">
+    <table bgcolor="#000" border="0" width="100%">
+      <tbody>
+        <tr>
+          <td style="color: #fff; font-size: 14pt">
+            <b>Comparaison de snapshot</b>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+    Pour comparer un snapshot existant pour la configuration actuelle, allez
+    dans le menu "<b>Config</b>", sélectionnez "<b>snapshot</b>" puis
+    "<b>compare...</b>". Une nouvelle boite de dialogue vous invitera a
+    commencer le processus de comparaison. Le processus de comparaison peut
+    prendre un long moment étant donné qu'il doit lire tous les fichiers pour
+    vérifier le checksum xxHash. Vous pouvez annuler le processus tout
+    moment.<br /><br />
+
+    <h4>Compte-rendu de comparaison</h4>
+    Durant le processus de comparaison, un compte rendu est généré dans la
+    fenêtre du processus de comparaison. Ce compte-rendu liste toutes les
+    différences de l'arborescence des fichiers avec le dernier snapshot. Cette
+    liste compte trois colonnes: Type, Change et Path.<br /><br />
+
+    <blockquote>
+      <b>Type</b> : identifie si l'entrée concerne un fichier ou un répertoire.
+      <blockquote>
+        <span style="font-family: Courier"><b>(f)</b></span> : signifie
+        Fichier.<br />
+        <span style="font-family: Courier"><b>(d)</b></span> : signifie
+        Répertoire.
+      </blockquote>
+
+      <b>Change </b>: identifie quel type de changement l'entrée représente.
+      <blockquote>
+        <span style="font-family: Courier"><b>+</b></span> : signifie ajout, le
+        fichier ou le dossier a été ajouté depuis le dernier snapshot.<br />
+        <span style="font-family: Courier"><b>-</b></span> : signifie supprimé,
+        le fichier ou le dossier a été supprimé depuis le dernier snapshot.<br />
+        <span style="font-family: Courier"><b>~</b></span> : signifie modifié,
+        le fichier a été modifié depuis le dernier snapshot.
+      </blockquote>
+
+      <b>Path</b> : identifie le chemin relatif du fichier ou du dossier
+      concerné.
+    </blockquote>
+  </body>
+</html>

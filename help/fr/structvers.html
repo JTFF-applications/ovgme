@@ -1,0 +1,109 @@
+<html>
+  <head>
+    <title>Versioning de Mod</title>
+
+    <meta name="keywords" content="mods,structure,mod-archive,zip," />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  </head>
+
+  <body style="font-family: arial; font-size: 10pt">
+    <table bgcolor="#000" border="0" width="100%">
+      <tbody>
+        <tr>
+          <td style="color: #fff; font-size: 14pt">
+            <b>Versioning de Mod</b>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+    OvGME Afterburner prend en charge le versioning pour les Mod-Archives (pas
+    pour les Directory-Mod). La version de mod est identifié localement par une
+    chaîne contenu dans un fichier text spécifique à la racine du fichier zip du
+    Mod-Archives, ou par les données fournies par le dépot. Cette version est
+    utilisée par le mécanisme des dépôts pour vérifier quelle version d'un même
+    mod est supérieur à l'autre.
+
+    <h4>Le fichier version.txt</h4>
+
+    OvGME Afterburner vérifie automatiquement si un fichier correctement nommé
+    "version.txt" existe à la racine du fichier zip d'un Mod-Archive. Si ce
+    fichier existe, il est considéré comme la chaine de version pour ce mod. Ce
+    fichier doit être un fichier text ASCII standard et la chaine de version
+    doit suivre le format décrit ci-dessous.
+
+    <h4>Le format de chaine de version</h4>
+
+    La chaine de version doit être composés uniquement de nombres
+    optionnellement séparés par un point. Aucune lettre ou autre caractère
+    spécial n'est autorisé.<br />
+    <br />
+    Il y'a jusqu'à trois composants de version autorisé, tous séparés par un (et
+    seulement un) point, pour correspondre au standard de numération de version
+    GNU comme suit:<br />
+    <span style="font-family: Courier">
+      <i>majeure</i><b>.</b><i>mineure</i><b>.</b><i>révision</i><br />
+    </span>
+    <br />
+
+    Une chaine de version valide n'a pas à inclure les trois composants de
+    version, elle peut par exemple inclure uniquement les composants
+    <i>version majeure</i> et <i>version mineure</i>, ou même seulement un seul
+    nombre qui sera considéré comme le composant <i>version majeure</i>.<br />
+    Voici des exemples de chaine de version valides:<br />
+    <blockquote>
+      <span style="font-family: Courier">
+        1.5.0<br />
+        1.2<br />
+        2<br />
+        0.9.5<br />
+        0.9<br />
+      </span>
+    </blockquote>
+
+    Les règles d'analyse de chaine sont les suivantes:<br />
+    <ul>
+      <li>
+        Si il y'a trois nombres, chaque nombre est séquentiellement interprété
+        comme:<br />
+        <i>version majeure</i> . <i>version mineure</i> . <i>version révision</i
+        ><br />
+      </li>
+      <li>
+        Si il y'a deux nombres, chaque nombre est séquentiellement interprété
+        comme:<br />
+        <i>version majeure</i> . <i>version mineure</i><br />
+      </li>
+      <li>
+        Si il n'y a qu'un seul nombre, le nombre est interprété comme:<br /><i
+          >version majeure</i
+        ><br />
+      </li>
+    </ul>
+
+    <h4>Comparaison de version</h4>
+
+    OvGME Afterburner détermine automatiquement quelle version est supèrieure en
+    analysant dans l'ordre les composants majeure, mineure et révision. Si deux
+    chaines de version n'ont pas le même format, il utilise la règle suivante
+    pour les comparer: Le composant manquant à droite du composant
+    <i>version majeure</i> a une valeur de <b>0</b>.<br />
+    <br />
+    Par exemple, une chaine de version "<i>1.2</i>" est en fait numériquement
+    traduite comme <span style="font-family: Courier">1.2.0</span> et une chaine
+    "<i>2</i>" est numriquement traduite en
+    <span style="font-family: Courier">2.0.0</span>. De ce fait:<br />
+    <blockquote>
+      Si la chaine "<i>1.2</i>" (<span style="font-family: Courier">1.2.0</span
+      >) doit être comparée à la chaine "<i>1.2.1</i>", la chaine "<i>1.2.1</i>"
+      sera considéré comme étant la supérieur à l'autre.<br /><br />
+      Si la chaine "<i>1.2.2</i>" doit être comparée à la chaine "<i>1.3</i>",
+      la chaine "<i>1.3</i>" string (<span style="font-family: Courier"
+        >1.3.0</span
+      >) sera considéré comme étant la supérieur à l'autre.<br /><br />
+      Si la chaine "<i>1</i>" doit être comparée à la chaine "<i>0.5.5</i>", la
+      chaine "<i>1</i>" string (<span style="font-family: Courier">1.0.0</span>)
+      sera considéré comme étant la supérieur à l'autre.<br /><br />
+    </blockquote>
+  </body>
+</html>

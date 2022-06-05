@@ -1,0 +1,119 @@
+<html>
+  <head>
+    <title>Principe du dépot</title>
+
+    <meta
+      name="keywords"
+      content="mods,repository,repositories,principle,base,server,http,url,"
+    />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  </head>
+
+  <body style="font-family: arial; font-size: 10pt">
+    <table bgcolor="#000" border="0" width="100%">
+      <tbody>
+        <tr>
+          <td style="color: #fff; font-size: 14pt">
+            <b>Principe du dépot</b>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+
+    Pour OvGME Afterburner, un dépot est simplement un serveur web (HTTP) qui
+    fournit des données XML spécifiquement structurées avec des informations à
+    propos de mod(s) à télécharger. Il y'a deux choses à ne pas confondre: Le
+    serveur de dépot, et où les mod(s).<br />
+    sont téléchargeables.
+
+    <h4>Transaction de dépot</h4>
+
+    Le mécanisme de dépot OvGME Afterburner est assez simple: Un serveur web
+    héberge un fichier XML disponible comme n'importe quelle autre page web à
+    partir d'une adresse spécifiqOvGME AfterburnervGME va interroger le serveur
+    HTTP pour recevoir ce fichier spécifique, puis va l'analyser pour recueillir
+    les données à propos des mods disponibles et où ils peuvent être
+    téléchargés.<br />
+    <img src="repos_schem.jpg" alt="Repository transaction schema" />
+    <br />
+
+    <h4>Le serveur de dépot</h4>
+
+    Le serveur de dépot doit être un serveur HTTP 1.1 standard. C'est pour ainsi
+    dire principalement le seule standard qui est actuellement en service sur le
+    web. En d'autres termes, un serveur de dépot n'est rien d'autre qu'un site
+    web qui fournit un fichier XML compatible OvGME Afterburner. La seule règle
+    étant qu'OvGME Afterburner doit pouvoir accéder à ce fichier XML via le web
+    avec une URL spécifique.<br />
+    <br />
+    Pour résumer: Si vous pouvez ouvrir le fichier XML depuis votre navigateur
+    web favoris, OvGME Afterburner le pourra également, et donc, il s'agit d'un
+    "d'OvGME Afterburner".<br />
+
+    <h4>L'URL standard à fournir</h4>
+
+    Si vous fournissez un fichier XML classique sur votre serveur, l'URL de
+    dépot à fournir aux utilisateurs doit être l'URL complète vers ce fichier
+    XML, avec ou sans le "<i>.xml</i>" à la fin de l'URL. En effet, si il n'y a
+    pas de "<i>.xml</i>" à la fin de l'URL, OvGME Afterburner va automatiquement
+    le rajouter.<br />
+    <br />
+    Par exemple, si l'URL complète pour fichier XML est:<br />
+    "<i>http://www.example.com:8080/repository/game1.xml</i>"<br />
+    <br />
+    L'URL suivante est <u>également valide</u> pouOvGME AfterburnerME:<br />
+    "<i>http://www.example.com:8080/repository/game1</i>"<br />
+    <br />
+    OvGME Afterburner prend en charge tout format d'URL standard, avec ou sans
+    protocole ou port spécifié.<br />
+    Voici des exemples de format d'URL pris en charge:<br />
+    <blockquote>
+      <i>
+        http://www.example.com/folder/repository<br />
+        www.example.com/folder/repository<br />
+        www.example.com:8081/folder/repository<br />
+        http://www.example.com:8081/folder/repository<br />
+      </i>
+    </blockquote>
+    <i
+      >Note: si aucun port n'est spécifié, le port HTTP 80 par défaut est
+      utilisé.</i
+    ><br />
+
+    <h4>données XML générées dynamiquement</h4>
+    OvGME Afterburner prend en charge la méthode d'encodage de transfert chunked
+    pour de simples requêtes HTTP GET (pas pour le téléchargement de fichier).
+    En d'autres termes
+    <b
+      >OvGME Afterburner peut recueillir des données XML depuis une page web
+      générée dynamiquement comme une page PHP ou ASP.</b
+    ><br />
+    <br />
+    Cependant, dans ce cas, l'URL founit doit permettre à OvGME AfterburnerE de
+    reconnaitre qu'il ne s'agit pas d'un dépot XML brute (pour ne pas essayer
+    d'ajouter l'extension "<i>.xml</i>" à l'URL). Pour se faire, l'URL doit au
+    choix:
+    <ul>
+      <li>
+        Etre l'URL complète vers le fichier, incluant l'extension "<i>.php</i>",
+        "<i>.asp</i>" ou "<i>.aspx</i>".
+      </li>
+      <li>
+        Contenir le caractère "<i>?</i>", typique d'une URL de requête
+        dynamique.
+      </li>
+    </ul>
+    Voici quelques exemples d'URL valides pour un dépot généré dynamiquement:<br />
+    <blockquote>
+      <i>
+        http://www.example.com/repository.php<br />
+        http://www.example.com/repo.asp<br />
+        http://www.example.com?game=1&type=2<br />
+      </i>
+    </blockquote>
+    La génération dynamique de données XML permet aux gestionnaires de dépéts de
+    créer leur dépôts en utilisant une vraie base de donnée avec leur propre
+    générateur de source XML.
+  </body>
+</html>
