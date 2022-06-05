@@ -1,3 +1,8 @@
+OvGME 1.7.5, 2022-05-06
+
+- Fix download speed for repositories
+- Change name to OvGME Afterburner
+
 OvGME 1.7.4, 2017-13-11
 
 - Fix crash when pressing Esc key in configuration window.
