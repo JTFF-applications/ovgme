@@ -1,11 +1,12 @@
 ----------------------------------------------------------------------------------------
-#OvGME
+#OvGME AfterBurner
 Enhanced Generic Mod Enabler and manager.
 ----------------------------------------------------------------------------------------
-Version: 1.7.4
+Version: 1.7.5
 ----------------------------------------------------------------------------------------
 
-Home page: https://github.com/sedenion/ovgme
+Home page: https://github.com/JTFF-applications/ovgme
+(Credit: original repo = https://github.com/sedenion/ovgme)
 
 Presentation
 ----------------------------------------------------------------------------------------
