@@ -445,7 +445,7 @@ int GME_NetwHttpGET(const char* url_str, const GME_NetwGETOnErr on_err, const GM
 	send(sock, http_req, strlen(http_req), 0);
 
 	/* stuff to receive data */
-	char recv_buff[131072];
+	char recv_buff[4096];
 	int recv_size;
 
 	/* receiving HTTP response (or not) */
@@ -652,8 +652,6 @@ int GME_NetwHttpGET(const char* url_str, const GME_NetwGETOnErr on_err, const GM
 	return 0; // success
 }
 
-
-
 /*
   function to send GET Http request to a server.
 */
@@ -696,11 +694,12 @@ int GME_NetwHttpGET(const char* url_str, const GME_NetwGETOnErr on_err, const GM
 	send(sock, http_req, strlen(http_req), 0);
 
 	/* stuff to receive data */
-	char recv_buff[131072];
+	const int recv_buff_size = 131072;
+	char* recv_buff = new char[recv_buff_size];
 	int recv_size;
 
 	/* receiving HTTP response (or not) */
-	recv_size = recv(sock, recv_buff, sizeof(recv_buff), 0);
+	recv_size = recv(sock, recv_buff, recv_buff_size, 0);
 	if (recv_size == SOCKET_ERROR || recv_size == 0) {
 		/* stream error... */
 		closesocket(sock); WSACleanup();
@@ -788,7 +787,7 @@ int GME_NetwHttpGET(const char* url_str, const GME_NetwGETOnErr on_err, const GM
 
 		do {
 			/* receive bunch of data */
-			recv_size = recv(sock, recv_buff, sizeof(recv_buff), 0);
+			recv_size = recv(sock, recv_buff, recv_buff_size, 0);
 			if (recv_size == SOCKET_ERROR || recv_size == 0) {
 				/* stream error... */
 				closesocket(sock); WSACleanup();
@@ -798,7 +797,7 @@ int GME_NetwHttpGET(const char* url_str, const GME_NetwGETOnErr on_err, const GM
 				return GME_HTTPGET_ERR_REC;
 			}
 
-			if (fwrite(&recv_buff, 1, recv_size, fp) != recv_size) {
+			if (fwrite(recv_buff, 1, recv_size, fp) != recv_size) {
 				closesocket(sock); WSACleanup();
 				fclose(fp); GME_FileDelete(file_path);
 				if (on_err) on_err(url_str);
@@ -824,6 +823,8 @@ int GME_NetwHttpGET(const char* url_str, const GME_NetwGETOnErr on_err, const GM
 	/* download successful */
 	closesocket(sock); WSACleanup();
 	fclose(fp);
+
+	delete[] recv_buff;
 
 	/* send downloaded file path to callback */
 	if (on_sav) on_sav(file_path.c_str());
