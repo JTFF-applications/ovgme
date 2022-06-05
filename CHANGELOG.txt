@@ -1,3 +1,7 @@
+OvGME 1.7.6, 2022-05-06
+
+- Fix Unicode issues
+
 OvGME 1.7.5, 2022-05-06
 
 - Fix download speed for repositories

@@ -71,7 +71,7 @@ along with this program. If not, see http://www.gnu.org/licenses/"
 #define GME_APP_NAME      L"OvGME Afterburner"
 #define GME_APP_MAJOR     1
 #define GME_APP_MINOR     7
-#define GME_APP_REVIS     5
+#define GME_APP_REVIS     6
 #define GME_APP_DATE      L"June 2022"
 
 /* handle for folder changes tracking */
