@@ -142,9 +142,10 @@ FONT 8, "Ms Shell Dlg"
     CTEXT           "Static", TXT_GPL, 7, 98, 249, 100, SS_CENTER, WS_EX_LEFT
     CTEXT           "https://github.com/JTFF-applications/ovgme", 0, 7, 76, 249, 9, SS_CENTER, WS_EX_LEFT
     CTEXT           "Version:", TXT_VERSION, 7, 44, 249, 9, SS_CENTER, WS_EX_LEFT
-    CONTROL         IDB_LOGO, 0, WC_STATIC, SS_BITMAP, 83, 7, 95, 35, WS_EX_LEFT
+    CONTROL         IDB_LOGO, 3, WC_STATIC, SS_BITMAP, 83, 7, 95, 35, WS_EX_LEFT
     DEFPUSHBUTTON   "Close", IDOK, 107, 203, 50, 14, 0, WS_EX_LEFT
-    CTEXT           "Copyright (c) 2022 Fabian INGREMEAU", 0, 7, 55, 249, 9, SS_CENTER, WS_EX_LEFT
+    CTEXT           "Copyright (c) 2016 Eric M.", 4, 7, 55, 249, 9, SS_CENTER, WS_EX_LEFT
+    CTEXT           "Copyright (c) 2022 The OvGME Afterburner Contributors", 5, 7, 64, 249, 9, SS_CENTER, WS_EX_LEFT
 }
 
 
@@ -159,8 +160,8 @@ FONT 8, "Ms Shell Dlg"
     EDITTEXT        ENT_NAME, 21, 43, 237, 12, ES_AUTOHSCROLL, WS_EX_LEFT
     EDITTEXT        ENT_ROOTPATH, 21, 71, 185, 12, ES_AUTOHSCROLL, WS_EX_LEFT
     LTEXT           "Configuration mods folder:", 0, 13, 88, 82, 9, SS_LEFT, WS_EX_LEFT
-    LTEXT           "Configuration title:", 0, 13, 32, 57, 9, SS_LEFT, WS_EX_LEFT
-    GROUPBOX        "", 0, 7, 21, 256, 125, 0, WS_EX_LEFT
+    LTEXT           "Configuration title:", 1, 13, 32, 57, 9, SS_LEFT, WS_EX_LEFT
+    GROUPBOX        "", 4, 7, 21, 256, 125, 0, WS_EX_LEFT
     PUSHBUTTON      "Browse", BTN_BROWSEROOT, 208, 71, 50, 12, 0, WS_EX_LEFT
     EDITTEXT        ENT_MODSPATH, 21, 99, 185, 12, ES_AUTOHSCROLL, WS_EX_LEFT
     PUSHBUTTON      "Cancel", IDCANCEL, 59, 154, 50, 14, 0, WS_EX_LEFT
@@ -169,8 +170,8 @@ FONT 8, "Ms Shell Dlg"
     EDITTEXT        ENT_BACKPATH, 21, 126, 185, 12, ES_AUTOHSCROLL, WS_EX_LEFT
     PUSHBUTTON      "Browse", BTN_BROWSEBCK, 208, 126, 50, 12, 0, WS_EX_LEFT
     PUSHBUTTON      "Browse", BTN_BROWSEMOD, 208, 99, 50, 12, 0, WS_EX_LEFT
-    LTEXT           "Configuration root folder:", 0, 13, 60, 78, 9, SS_LEFT, WS_EX_LEFT
-    LTEXT           "Create new configuration", 0, 7, 7, 249, 9, SS_LEFT, WS_EX_LEFT
+    LTEXT           "Configuration root folder:", 5, 13, 60, 78, 9, SS_LEFT, WS_EX_LEFT
+    LTEXT           "Create new configuration", 6, 7, 7, 249, 9, SS_LEFT, WS_EX_LEFT
 }
 
 
@@ -185,11 +186,11 @@ FONT 8, "Ms Shell Dlg"
     EDITTEXT        ENT_ROOTPATH, 21, 71, 185, 12, ES_AUTOHSCROLL | ES_READONLY, WS_EX_LEFT
     PUSHBUTTON      "Cancel", IDCANCEL, 59, 154, 50, 14, 0, WS_EX_LEFT
     DEFPUSHBUTTON   "Apply", BTN_APPLY, 7, 154, 50, 14, 0, WS_EX_LEFT
-    LTEXT           "Edit current configuration", 0, 7, 7, 80, 9, SS_LEFT, WS_EX_LEFT
-    LTEXT           "Configuration title:", 0, 13, 32, 57, 9, SS_LEFT, WS_EX_LEFT
+    LTEXT           "Edit current configuration", 1, 7, 7, 80, 9, SS_LEFT, WS_EX_LEFT
+    LTEXT           "Configuration title:", 4, 13, 32, 57, 9, SS_LEFT, WS_EX_LEFT
     EDITTEXT        ENT_NAME, 21, 43, 237, 12, ES_AUTOHSCROLL, WS_EX_LEFT
-    LTEXT           "Configuration root folder:", 0, 13, 60, 78, 9, SS_LEFT, WS_EX_LEFT
-    LTEXT           "Configuration mods folder:", 0, 13, 88, 82, 9, SS_LEFT, WS_EX_LEFT
+    LTEXT           "Configuration root folder:", 5, 13, 60, 78, 9, SS_LEFT, WS_EX_LEFT
+    LTEXT           "Configuration mods folder:", 6, 13, 88, 82, 9, SS_LEFT, WS_EX_LEFT
     EDITTEXT        ENT_MODSPATH, 21, 99, 185, 12, ES_AUTOHSCROLL, WS_EX_LEFT
     AUTOCHECKBOX    "Custom configuration backup folder:", CHK_CUSTBACKUP, 13, 116, 129, 8, 0, WS_EX_LEFT
     EDITTEXT        ENT_BACKPATH, 21, 126, 185, 12, ES_AUTOHSCROLL, WS_EX_LEFT
@@ -299,10 +300,10 @@ FONT 8, "Ms Shell Dlg"
 {
     COMBOBOX        CMB_PROFLIST, 21, 45, 237, 20, CBS_DROPDOWN | CBS_HASSTRINGS, WS_EX_LEFT
     LTEXT           "Mods profile name:", 0, 13, 32, 60, 9, SS_LEFT, WS_EX_LEFT
-    GROUPBOX        "", 0, 7, 21, 256, 45, 0, WS_EX_LEFT
+    GROUPBOX        "", 1, 7, 21, 256, 45, 0, WS_EX_LEFT
     PUSHBUTTON      "Cancel", IDCANCEL, 59, 71, 50, 14, 0, WS_EX_LEFT
     DEFPUSHBUTTON   "Delete", BTN_REM, 7, 71, 50, 14, 0, WS_EX_LEFT
-    LTEXT           "Delete mods profile", 0, 7, 7, 61, 9, SS_LEFT, WS_EX_LEFT
+    LTEXT           "Delete mods profile", 4, 7, 7, 61, 9, SS_LEFT, WS_EX_LEFT
 }
 
 
@@ -316,10 +317,10 @@ FONT 8, "Ms Shell Dlg"
 {
     EDITTEXT        ENT_NAME, 21, 43, 237, 12, ES_AUTOHSCROLL, WS_EX_LEFT
     LTEXT           "Mods profile name:", 0, 13, 32, 60, 9, SS_LEFT, WS_EX_LEFT
-    GROUPBOX        "", 0, 7, 21, 256, 45, 0, WS_EX_LEFT
+    GROUPBOX        "", 4, 7, 21, 256, 45, 0, WS_EX_LEFT
     PUSHBUTTON      "Cancel", IDCANCEL, 59, 71, 50, 14, 0, WS_EX_LEFT
     DEFPUSHBUTTON   "Save", BTN_ADD, 7, 71, 50, 14, 0, WS_EX_LEFT
-    LTEXT           "Save current mods profile", 0, 7, 7, 76, 9, SS_LEFT, WS_EX_LEFT
+    LTEXT           "Save current mods profile", 5, 7, 7, 76, 9, SS_LEFT, WS_EX_LEFT
 }
 
 
@@ -485,20 +486,20 @@ FONT 8, "Ms Shell Dlg"
     EDITTEXT        ENT_MODSPATH, 22, 184, 234, 12, ES_AUTOHSCROLL, WS_EX_LEFT
     DEFPUSHBUTTON   "Go!", BTN_ADD, 7, 289, 50, 14, 0, WS_EX_LEFT
     PUSHBUTTON      "Cancel", IDCANCEL, 59, 289, 50, 14, 0, WS_EX_LEFT
-    LTEXT           "          Welcome to OvGME Afterburner !    \n\nYour configuration list is empty, maybe it's the first time you launch OvGME Afterburner. This wizard will help you to create your first configuration.", 0, 105, 7, 208, 33, SS_LEFT, WS_EX_LEFT
-    LTEXT           "NOTE: The title is the indicative name of the configuration used to identify it amongst other ones. It must be unique.", 0, 22, 83, 286, 17, SS_LEFT, WS_EX_STATICEDGE
-    LTEXT           "Configuration root folder:", 0, 14, 115, 78, 9, SS_LEFT, WS_EX_LEFT
+    LTEXT           "          Welcome to OvGME Afterburner !    \n\nYour configuration list is empty, maybe it's the first time you launch OvGME Afterburner. This wizard will help you to create your first configuration.", 1, 105, 7, 208, 33, SS_LEFT, WS_EX_LEFT
+    LTEXT           "NOTE: The title is the indicative name of the configuration used to identify it amongst other ones. It must be unique.", 15, 22, 83, 286, 17, SS_LEFT, WS_EX_STATICEDGE
+    LTEXT           "Configuration root folder:", 3, 14, 115, 78, 9, SS_LEFT, WS_EX_LEFT
     PUSHBUTTON      "Browse", BTN_BROWSEROOT, 258, 126, 50, 12, 0, WS_EX_LEFT
-    LTEXT           "Configuration mods folder:", 0, 14, 173, 82, 9, SS_LEFT, WS_EX_LEFT
-    LTEXT           "NOTE: The mods folder is where the configuration will seek for available mods. You should specify here where your mods are stored for this game or software.", 0, 21, 198, 287, 17, SS_LEFT, WS_EX_STATICEDGE
+    LTEXT           "Configuration mods folder:", 4, 14, 173, 82, 9, SS_LEFT, WS_EX_LEFT
+    LTEXT           "NOTE: The mods folder is where the configuration will seek for available mods. You should specify here where your mods are stored for this game or software.", 5, 21, 198, 287, 17, SS_LEFT, WS_EX_STATICEDGE
     AUTOCHECKBOX    "Custom configuration backup folder:", CHK_CUSTBACKUP, 14, 230, 129, 8, 0, WS_EX_LEFT
-    LTEXT           "NOTE: You can optionally specify the custom backup folder. The backup folder is where backup data of original game or software files are stored for this configuration. ", 0, 22, 254, 286, 17, SS_LEFT, WS_EX_STATICEDGE
+    LTEXT           "NOTE: You can optionally specify the custom backup folder. The backup folder is where backup data of original game or software files are stored for this configuration. ", 6, 22, 254, 286, 17, SS_LEFT, WS_EX_STATICEDGE
     EDITTEXT        ENT_BACKPATH, 22, 240, 234, 12, ES_AUTOHSCROLL, WS_EX_LEFT
     PUSHBUTTON      "Browse", BTN_BROWSEBCK, 258, 240, 50, 12, 0, WS_EX_LEFT
     PUSHBUTTON      "Browse", BTN_BROWSEMOD, 258, 184, 50, 12, 0, WS_EX_LEFT
-    LTEXT           "Configuration title:", 0, 14, 58, 57, 9, SS_LEFT, WS_EX_LEFT
-    GROUPBOX        "", 0, 8, 47, 305, 234, 0, WS_EX_LEFT
-    LTEXT           "NOTE: The root folder is where mods will be applyed, this is usually the game or software installation folder.", 0, 21, 140, 287, 17, SS_LEFT, WS_EX_STATICEDGE
+    LTEXT           "Configuration title:", 7, 14, 58, 57, 9, SS_LEFT, WS_EX_LEFT
+    GROUPBOX        "", 8, 8, 47, 305, 234, 0, WS_EX_LEFT
+    LTEXT           "NOTE: The root folder is where mods will be applyed, this is usually the game or software installation folder.", 9, 21, 140, 287, 17, SS_LEFT, WS_EX_STATICEDGE
 }
 
 
