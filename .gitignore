@@ -368,3 +368,5 @@ FodyWeavers.xsd
 
 
 /help/**/ovgme.chm
+*.exe
+*.msi

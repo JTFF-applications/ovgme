@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
-    <ProjectConfiguration Include="Debug|Win32">
-      <Configuration>Debug</Configuration>
-      <Platform>Win32</Platform>
-    </ProjectConfiguration>
-    <ProjectConfiguration Include="Release|Win32">
-      <Configuration>Release</Configuration>
-      <Platform>Win32</Platform>
-    </ProjectConfiguration>
     <ProjectConfiguration Include="Debug|x64">
       <Configuration>Debug</Configuration>
       <Platform>x64</Platform>
@@ -26,17 +18,6 @@
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
-    <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
-    <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
@@ -53,12 +34,6 @@
   </ImportGroup>
   <ImportGroup Label="Shared">
   </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
@@ -66,41 +41,17 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <CustomBuildAfterTargets>
+    </CustomBuildAfterTargets>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <CustomBuildAfterTargets>
+    </CustomBuildAfterTargets>
+  </PropertyGroup>
   <PropertyGroup Label="Vcpkg">
     <VcpkgEnabled>false</VcpkgEnabled>
   </PropertyGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
-      <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)src\thirdparty\pugixml;$(ProjectDir)include\thirdparty\pugixml;$(ProjectDir)include;$(ProjectDir)include\thirdparty\xxhash;$(ProjectDir)include\thirdparty\miniz;$(ProjectDir)src\thirdparty\xxhash;$(ProjectDir)src\thirdparty\miniz;$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-    </ClCompile>
-    <Link>
-      <SubSystem>Windows</SubSystem>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies);user32.lib;comctl32.lib;kernel32.lib;gdi32.lib;shlwapi.lib;ws2_32.lib</AdditionalDependencies>
-    </Link>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
-      <IntrinsicFunctions>true</IntrinsicFunctions>
-      <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)src\thirdparty\pugixml;$(ProjectDir)include\thirdparty\pugixml;$(ProjectDir)include;$(ProjectDir)include\thirdparty\xxhash;$(ProjectDir)include\thirdparty\miniz;$(ProjectDir)src\thirdparty\xxhash;$(ProjectDir)src\thirdparty\miniz;$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-    </ClCompile>
-    <Link>
-      <SubSystem>Windows</SubSystem>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <OptimizeReferences>true</OptimizeReferences>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>%(AdditionalDependencies);user32.lib;comctl32.lib;kernel32.lib;gdi32.lib;shlwapi.lib;ws2_32.lib</AdditionalDependencies>
-    </Link>
-  </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -116,6 +67,11 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies);user32.lib;comctl32.lib;kernel32.lib;gdi32.lib;shlwapi.lib;ws2_32.lib</AdditionalDependencies>
     </Link>
+    <CustomBuildStep>
+      <Command>$(SolutionDir)help\build.bat $(SolutionDir)help</Command>
+      <Outputs>$(SolultionDir)help\en\ovgme.chm;$(SolultionDir)help\fr\ovgme.chm;%(Outputs)</Outputs>
+      <TreatOutputAsContent>false</TreatOutputAsContent>
+    </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -136,6 +92,11 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies);user32.lib;comctl32.lib;kernel32.lib;gdi32.lib;shlwapi.lib;ws2_32.lib</AdditionalDependencies>
     </Link>
+    <CustomBuildStep>
+      <Command>$(SolutionDir)help\build.bat $(SolutionDir)help</Command>
+      <Outputs>$(SolultionDir)help\en\ovgme.chm;$(SolultionDir)help\fr\ovgme.chm;%(Outputs)</Outputs>
+      <TreatOutputAsContent>false</TreatOutputAsContent>
+    </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="include\gme.h" />
@@ -163,53 +124,6 @@
     <ClInclude Include="include\thirdparty\pugixml\pugixml.hpp" />
     <ClInclude Include="include\thirdparty\xxhash\xxhash.h" />
     <ClInclude Include="resource.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="help\en\gameadd.html" />
-    <None Include="help\en\gameedit.html" />
-    <None Include="help\en\gamerem.html" />
-    <None Include="help\en\introduction.html" />
-    <None Include="help\en\jsgmecomp.html" />
-    <None Include="help\en\modsenadis.html" />
-    <None Include="help\en\modsfaq.html" />
-    <None Include="help\en\modsimport.html" />
-    <None Include="help\en\modsintro.html" />
-    <None Include="help\en\modsmake.html" />
-    <None Include="help\en\modsprofil.html" />
-    <None Include="help\en\modsrepos.html" />
-    <None Include="help\en\reposbase.html" />
-    <None Include="help\en\reposfaq.html" />
-    <None Include="help\en\reposxml.html" />
-    <None Include="help\en\snapcomp.html" />
-    <None Include="help\en\snapintro.html" />
-    <None Include="help\en\snapnew.html" />
-    <None Include="help\en\structdir.html" />
-    <None Include="help\en\structintro.html" />
-    <None Include="help\en\structvers.html" />
-    <None Include="help\en\structzip.html" />
-    <None Include="help\fr\gameadd.html" />
-    <None Include="help\fr\gameedit.html" />
-    <None Include="help\fr\gamerem.html" />
-    <None Include="help\fr\introduction.html" />
-    <None Include="help\fr\jsgmecomp.html" />
-    <None Include="help\fr\modsenadis.html" />
-    <None Include="help\fr\modsfaq.html" />
-    <None Include="help\fr\modsimport.html" />
-    <None Include="help\fr\modsintro.html" />
-    <None Include="help\fr\modsmake.html" />
-    <None Include="help\fr\modsprofil.html" />
-    <None Include="help\fr\modsrepos.html" />
-    <None Include="help\fr\reposbase.html" />
-    <None Include="help\fr\reposfaq.html" />
-    <None Include="help\fr\reposxml.html" />
-    <None Include="help\fr\snapcomp.html" />
-    <None Include="help\fr\snapintro.html" />
-    <None Include="help\fr\snapnew.html" />
-    <None Include="help\fr\structdir.html" />
-    <None Include="help\fr\structintro.html" />
-    <None Include="help\fr\structvers.html" />
-    <None Include="help\fr\structzip.html" />
-    <None Include="manifest.dbg" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -251,9 +165,6 @@
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="resource.rc" />
-  </ItemGroup>
-  <ItemGroup>
-    <Xml Include="manifest.xml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

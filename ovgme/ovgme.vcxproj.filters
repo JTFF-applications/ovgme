@@ -13,51 +13,33 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\Thridparties">
+      <UniqueIdentifier>{5bd82b07-3b38-4c0f-ade9-d25ab85168fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Thirdparties">
+      <UniqueIdentifier>{703fb38b-120e-4211-9b95-76d32814bbbb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Dialogs">
+      <UniqueIdentifier>{ed444eb2-c2a8-4099-932f-062579095011}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Dialogs">
+      <UniqueIdentifier>{12c623fe-b1c0-421f-af63-a01b072ea392}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Utilities">
+      <UniqueIdentifier>{080dd84b-67d6-4ca0-b2b5-1e2cc7d90474}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utilities">
+      <UniqueIdentifier>{b4f63922-f234-4905-a111-ea270a1c0615}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\thirdparty\miniz\miniz.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\thirdparty\xxhash\xxhash.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\gme.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\gme_conf.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\gme_dlg_about.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\gme_dlg_debug.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\gme_dlg_game.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\gme_dlg_main.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\gme_dlg_mods.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\gme_dlg_repo.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\gme_dlg_snap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\gme_game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\gme_logs.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\gme_mods.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\gme_netw.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\gme_repo.h">
@@ -66,122 +48,75 @@
     <ClInclude Include="include\gme_snap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\gme_tools.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\gme_uins.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\gmenode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="resource.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\gme_dlg_prof.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\gme_prof.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\thirdparty\miniz\miniz.h">
+      <Filter>Header Files\Thirdparties</Filter>
+    </ClInclude>
+    <ClInclude Include="include\thirdparty\xxhash\xxhash.h">
+      <Filter>Header Files\Thirdparties</Filter>
+    </ClInclude>
     <ClInclude Include="include\thirdparty\pugixml\pugiconfig.hpp">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Thirdparties</Filter>
     </ClInclude>
     <ClInclude Include="include\thirdparty\pugixml\pugixml.hpp">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Thirdparties</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gme_dlg_about.h">
+      <Filter>Header Files\Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gme_dlg_debug.h">
+      <Filter>Header Files\Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gme_dlg_game.h">
+      <Filter>Header Files\Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gme_dlg_main.h">
+      <Filter>Header Files\Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gme_dlg_mods.h">
+      <Filter>Header Files\Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gme_dlg_prof.h">
+      <Filter>Header Files\Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gme_dlg_repo.h">
+      <Filter>Header Files\Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gme_dlg_snap.h">
+      <Filter>Header Files\Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gme_conf.h">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gme_logs.h">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gme_netw.h">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gme_tools.h">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gmenode.h">
+      <Filter>Header Files\Utilities</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="help\en\gameadd.html" />
-    <None Include="help\en\gameedit.html" />
-    <None Include="help\en\gamerem.html" />
-    <None Include="help\en\introduction.html" />
-    <None Include="help\en\jsgmecomp.html" />
-    <None Include="help\en\modsenadis.html" />
-    <None Include="help\en\modsfaq.html" />
-    <None Include="help\en\modsimport.html" />
-    <None Include="help\en\modsintro.html" />
-    <None Include="help\en\modsmake.html" />
-    <None Include="help\en\modsprofil.html" />
-    <None Include="help\en\modsrepos.html" />
-    <None Include="help\en\reposbase.html" />
-    <None Include="help\en\reposfaq.html" />
-    <None Include="help\en\reposxml.html" />
-    <None Include="help\en\snapcomp.html" />
-    <None Include="help\en\snapintro.html" />
-    <None Include="help\en\snapnew.html" />
-    <None Include="help\en\structdir.html" />
-    <None Include="help\en\structintro.html" />
-    <None Include="help\en\structvers.html" />
-    <None Include="help\en\structzip.html" />
-    <None Include="help\fr\gameadd.html" />
-    <None Include="help\fr\gameedit.html" />
-    <None Include="help\fr\gamerem.html" />
-    <None Include="help\fr\introduction.html" />
-    <None Include="help\fr\jsgmecomp.html" />
-    <None Include="help\fr\modsenadis.html" />
-    <None Include="help\fr\modsfaq.html" />
-    <None Include="help\fr\modsimport.html" />
-    <None Include="help\fr\modsintro.html" />
-    <None Include="help\fr\modsmake.html" />
-    <None Include="help\fr\modsprofil.html" />
-    <None Include="help\fr\modsrepos.html" />
-    <None Include="help\fr\reposbase.html" />
-    <None Include="help\fr\reposfaq.html" />
-    <None Include="help\fr\reposxml.html" />
-    <None Include="help\fr\snapcomp.html" />
-    <None Include="help\fr\snapintro.html" />
-    <None Include="help\fr\snapnew.html" />
-    <None Include="help\fr\structdir.html" />
-    <None Include="help\fr\structintro.html" />
-    <None Include="help\fr\structvers.html" />
-    <None Include="help\fr\structzip.html" />
-    <None Include="manifest.dbg" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\thirdparty\miniz\miniz.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\thirdparty\xxhash\xxhash.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\gme.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gme_conf.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gme_dlg_about.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gme_dlg_debug.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gme_dlg_game.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gme_dlg_main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gme_dlg_mods.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gme_dlg_repo.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gme_dlg_snap.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\gme_game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\gme_logs.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\gme_mods.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gme_netw.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\gme_repo.cpp">
@@ -190,13 +125,7 @@
     <ClCompile Include="src\gme_snap.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\gme_tools.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\gme_uins.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gmenode.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
@@ -205,11 +134,53 @@
     <ClCompile Include="src\gme_prof.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\gme_dlg_prof.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\thirdparty\miniz\miniz.c">
+      <Filter>Source Files\Thridparties</Filter>
     </ClCompile>
     <ClCompile Include="src\thirdparty\pugixml\pugixml.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Thridparties</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thirdparty\xxhash\xxhash.c">
+      <Filter>Source Files\Thridparties</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gme_dlg_about.cpp">
+      <Filter>Source Files\Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gme_dlg_debug.cpp">
+      <Filter>Source Files\Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gme_dlg_game.cpp">
+      <Filter>Source Files\Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gme_dlg_main.cpp">
+      <Filter>Source Files\Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gme_dlg_mods.cpp">
+      <Filter>Source Files\Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gme_dlg_prof.cpp">
+      <Filter>Source Files\Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gme_dlg_repo.cpp">
+      <Filter>Source Files\Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gme_dlg_snap.cpp">
+      <Filter>Source Files\Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gme_conf.cpp">
+      <Filter>Source Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gme_logs.cpp">
+      <Filter>Source Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gme_netw.cpp">
+      <Filter>Source Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gme_tools.cpp">
+      <Filter>Source Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gmenode.cpp">
+      <Filter>Source Files\Utilities</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -248,8 +219,5 @@
     <ResourceCompile Include="resource.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Xml Include="manifest.xml" />
   </ItemGroup>
 </Project>

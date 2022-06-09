@@ -5,6 +5,8 @@ VisualStudioVersion = 17.2.32422.2
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ovgme", "ovgme\ovgme.vcxproj", "{7FE03453-74C3-4EC5-B9E2-13A5F222E06D}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "setup", "setup\setup.vdproj", "{BEE29196-8AD7-4D3E-8292-8365BEA430F3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -15,12 +17,14 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{7FE03453-74C3-4EC5-B9E2-13A5F222E06D}.Debug|x64.ActiveCfg = Debug|x64
 		{7FE03453-74C3-4EC5-B9E2-13A5F222E06D}.Debug|x64.Build.0 = Debug|x64
-		{7FE03453-74C3-4EC5-B9E2-13A5F222E06D}.Debug|x86.ActiveCfg = Debug|Win32
-		{7FE03453-74C3-4EC5-B9E2-13A5F222E06D}.Debug|x86.Build.0 = Debug|Win32
+		{7FE03453-74C3-4EC5-B9E2-13A5F222E06D}.Debug|x86.ActiveCfg = Debug|x64
 		{7FE03453-74C3-4EC5-B9E2-13A5F222E06D}.Release|x64.ActiveCfg = Release|x64
 		{7FE03453-74C3-4EC5-B9E2-13A5F222E06D}.Release|x64.Build.0 = Release|x64
-		{7FE03453-74C3-4EC5-B9E2-13A5F222E06D}.Release|x86.ActiveCfg = Release|Win32
-		{7FE03453-74C3-4EC5-B9E2-13A5F222E06D}.Release|x86.Build.0 = Release|Win32
+		{7FE03453-74C3-4EC5-B9E2-13A5F222E06D}.Release|x86.ActiveCfg = Release|x64
+		{BEE29196-8AD7-4D3E-8292-8365BEA430F3}.Debug|x64.ActiveCfg = Debug
+		{BEE29196-8AD7-4D3E-8292-8365BEA430F3}.Debug|x86.ActiveCfg = Debug
+		{BEE29196-8AD7-4D3E-8292-8365BEA430F3}.Release|x64.ActiveCfg = Release
+		{BEE29196-8AD7-4D3E-8292-8365BEA430F3}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
