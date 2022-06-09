@@ -39,16 +39,16 @@
 #include <stdint.h>
 #include <inttypes.h>
 
-/*
-  Mini lib for Zip implementation, found here:
-    https://code.google.com/archive/p/miniz/
-*/
+ /*
+   Mini lib for Zip implementation, found here:
+	 https://code.google.com/archive/p/miniz/
+ */
 #include "miniz.h"
 
-/*
-  xxHash - Extremely Fast Hash algorithm:
-    https://github.com/Cyan4973/xxHash
-*/
+ /*
+   xxHash - Extremely Fast Hash algorithm:
+	 https://github.com/Cyan4973/xxHash
+ */
 #include "xxhash.h"
 
 typedef unsigned char ubyte;
@@ -71,7 +71,7 @@ along with this program. If not, see http://www.gnu.org/licenses/"
 #define GME_APP_NAME      L"OvGME Afterburner"
 #define GME_APP_MAJOR     1
 #define GME_APP_MINOR     7
-#define GME_APP_REVIS     6
+#define GME_APP_REVIS     7
 #define GME_APP_DATE      L"June 2022"
 
 /* handle for folder changes tracking */

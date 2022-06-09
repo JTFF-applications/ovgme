@@ -1,3 +1,8 @@
+OvGME 1.7.7, 2022-05-09
+
+- Fix bug with double mod before refresh after any sucessful query
+- Fix installer detected as a malware
+
 OvGME 1.7.6, 2022-05-06
 
 - Fix Unicode issues
