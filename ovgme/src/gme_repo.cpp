@@ -531,7 +531,7 @@ bool GME_RepoChkDesc()
 				sel_cnt++;
 			}
 			else {
-				SendMessageW(het, WM_SETTEXT, 0, (LPARAM)"[Multiple selection]");
+				SendMessageW(het, WM_SETTEXT, 0, (LPARAM)L"[Multiple selection]");
 				return false;
 			}
 		}
