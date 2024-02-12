@@ -108,6 +108,9 @@
     <ClInclude Include="include\gmenode.h">
       <Filter>Header Files\Utilities</Filter>
     </ClInclude>
+    <ClInclude Include="C:\Users\DIRECTEUR_PC2\Desktop\miniz.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\gme.cpp">
@@ -181,6 +184,9 @@
     </ClCompile>
     <ClCompile Include="src\gmenode.cpp">
       <Filter>Source Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\DIRECTEUR_PC2\Desktop\miniz.c">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

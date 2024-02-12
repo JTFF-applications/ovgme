@@ -1,3 +1,7 @@
+OvGME 1.7.9, 2024-02-13
+
+- Allow mods with size > 4go
+
 OvGME 1.7.8, 2022-09-24
 
 - Fix crash when mod archive is created

@@ -99,6 +99,7 @@
     </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="C:\Users\DIRECTEUR_PC2\Desktop\miniz.h" />
     <ClInclude Include="include\gme.h" />
     <ClInclude Include="include\gmenode.h" />
     <ClInclude Include="include\gme_conf.h" />
@@ -126,6 +127,7 @@
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="C:\Users\DIRECTEUR_PC2\Desktop\miniz.c" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="src\gme.cpp" />
     <ClCompile Include="src\gmenode.cpp" />
